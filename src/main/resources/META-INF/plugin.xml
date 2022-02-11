@@ -1,0 +1,19 @@
+<idea-plugin>
+    <id>com.tobiasgrunwald.pluginPlayground</id>
+    <name>MyFirstPlugin</name>
+    <vendor email="tsupport@yourcompany.com" url="http://www.tyourcompany.com">tYourCompany</vendor>
+
+    <description>This is a description, I don't really know why it should be so long.</description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
