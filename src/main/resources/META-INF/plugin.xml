@@ -8,12 +8,26 @@
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
          on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.jetbrains.php</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
+        <localInspection language="PHP"
+                         displayName="SDK: '==' or '!=' used instead of 'equals()'"
+                         groupPath="Php"
+                         groupBundle="messages.InspectionsBundle"
+                         groupKey="group.names.probable.bugs"
+                         enabledByDefault="true"
+                         level="WARNING"
+                         implementationClass="org.intellij.sdk.codeInspection.ComparingReferencesInspection"/>
     </extensions>
 
     <actions>
         <!-- Add your actions here -->
+        <action id="PopupDialogAction" class="PopupDialogAction" text="Pop Dialog Action" description="SDK action example">
+            <override-text place="MainMenu" text="PDA"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt COMMA"/>
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
     </actions>
 </idea-plugin>
