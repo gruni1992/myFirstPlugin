@@ -8,7 +8,15 @@ class T
      */
     private $str = "Teststring";
 
-    function s() {
+    /**
+     * this is just a comment
+     */
+    private $i = 1;
+
+    function s()
+    {
         echo $this->str;
+        /** @var string $test */
+        $test = "";
     }
 }

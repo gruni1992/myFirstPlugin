@@ -19,7 +19,7 @@
                          groupKey="group.names.probable.bugs"
                          enabledByDefault="true"
                          level="WARNING"
-                         implementationClass="org.intellij.sdk.codeInspection.ComparingReferencesInspection"/>
+                         implementationClass="MyInspection"/>
     </extensions>
 
     <actions>
