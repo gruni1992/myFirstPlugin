@@ -9,6 +9,11 @@ class T
     private $str = "Teststring";
 
     /**
+     * @var string $stri
+     */
+    private $stri = "Teststring";
+
+    /**
      * this is just a comment
      */
     private $i = 1;

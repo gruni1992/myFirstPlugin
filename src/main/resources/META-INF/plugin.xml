@@ -19,7 +19,7 @@
                          groupKey="group.names.probable.bugs"
                          enabledByDefault="true"
                          level="WARNING"
-                         implementationClass="MyInspection"/>
+                         implementationClass="DocTagFieldDeclarationInspection"/>
     </extensions>
 
     <actions>

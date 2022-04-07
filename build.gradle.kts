@@ -22,14 +22,26 @@ tasks.test {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version.set("2021.2.3")
+    version.set("2021.3.3")
     type.set("IU")
-    plugins.set(listOf("com.jetbrains.php:212.5457.49"))
+    plugins.set(listOf("com.jetbrains.php:213.7172.28"))
 }
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}
+
 tasks {
+
     patchPluginXml {
         changeNotes.set("""
             Add change notes here.<br>
             <em>most HTML tags may be used</em>        """.trimIndent())
+    }
+
+    buildSearchableOptions{
+        enabled = false
     }
 }
