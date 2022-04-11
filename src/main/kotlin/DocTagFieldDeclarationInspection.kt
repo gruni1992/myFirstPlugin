@@ -3,6 +3,8 @@ import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiElementVisitor
 import com.intellij.psi.codeStyle.CodeStyleManager
 import com.jetbrains.php.codeInsight.PhpImportOptimizer
+import com.jetbrains.php.lang.PhpCodeUtil
+import com.jetbrains.php.lang.actions.generation.PhpGenerateGettersAction
 import com.jetbrains.php.lang.documentation.phpdoc.psi.PhpDocComment
 import com.jetbrains.php.lang.psi.PhpPsiElementFactory
 import com.jetbrains.php.lang.psi.elements.Field
@@ -52,8 +54,6 @@ class DocTagFieldDeclarationInspection : LocalInspectionTool() {
                 field.defaultValuePresentation,
                 type!!.toStringResolved()
             )
-            val const = PhpPsiElementFactory.createClassConstant(project, PhpModifier.PUBLIC_IMPLEMENTED_DYNAMIC, "test", "\"T\"")
-            descriptor.psiElement.addAfter(const, field.parent)
             descriptor.psiElement.addAfter(newElement, field.parent)
             descriptor.psiElement.deleteChildRange(descriptor.startElement, field.parent)
             CodeStyleManager.getInstance(project)

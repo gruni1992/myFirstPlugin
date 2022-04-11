@@ -11,7 +11,20 @@
     <depends>com.intellij.modules.lang</depends>
     <depends>com.jetbrains.php</depends>
 
+    <actions>
+        <!-- Add your actions here -->
+        <action id="PopupDialogAction" class="PopupDialogAction" text="Pop Dialog Action" description="SDK action example">
+            <override-text place="MainMenu" text="PDA"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt COMMA"/>
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
+
     <extensions defaultExtensionNs="com.intellij">
+        <intentionAction>
+            <className>ConstIntention</className>
+            <category>SDK intentions</category>
+        </intentionAction>
         <localInspection language="PHP"
                          displayName="SDK: '==' or '!=' used instead of 'equals()'"
                          groupPath="Php"
@@ -21,13 +34,4 @@
                          level="WARNING"
                          implementationClass="DocTagFieldDeclarationInspection"/>
     </extensions>
-
-    <actions>
-        <!-- Add your actions here -->
-        <action id="PopupDialogAction" class="PopupDialogAction" text="Pop Dialog Action" description="SDK action example">
-            <override-text place="MainMenu" text="PDA"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt COMMA"/>
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
-        </action>
-    </actions>
 </idea-plugin>

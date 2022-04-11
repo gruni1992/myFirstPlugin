@@ -1,7 +1,9 @@
 <?php
 
-class T
+class TestClass
 {
+
+    public const T = "T";
 
     /**
      * @var string $str
@@ -18,10 +20,12 @@ class T
      */
     private $i = 1;
 
+
     function s()
     {
         echo $this->str;
         /** @var string $test */
         $test = "";
+        TestClass::fromRecordData()
     }
 }
